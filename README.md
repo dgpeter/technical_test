@@ -1,70 +1,57 @@
-![logo](logo.png)
+# Technical Test Rideways Booking.com
 
-# BookingGo Technical Test
 
-We are delighted that you are considering joining us at BookingGo. As part of our recruitment, we will be looking at your approach to problem solving and coding.  With this in mind, we ask that you complete the following exercise.
+## Getting Started
 
-Do not over engineer your solution - keep it simple. The things we are looking for are:
-* High quality code
-* Your test approach
-* Problem solving
+The project is built using IntelliJ IDEA, but can be run from other Java IDEs as well.
+To fetch it from git and run it from the terminal you can follow the commands:
 
-Please make sure your code compiles and runs
+```
+git clone git@github.com:dgpeter/technical_test.git
+-> enter the directory
+./mvnw clean install
+```
 
-Once complete, you can submit your code to us by sharing an open GitHub repository.
+./mvnw clean install - will return a JAR file -- spring-0.0.1-SNAPSHOT.jar and will also run the tests
 
-## Introduction
 
-Our Rides platform allows customers to book professional cars and drivers across the globe. Typically, customers are travelling either to or from an airport, although journeys can be between any two points.
+### Prerequisites
 
-To fulfil bookings we work with local partners, often through APIs. At the end of this exercise you will have built a simple search and fulfilment engine that can obtain data from suppliers, aggregate this data and present it in a format which allows our customers to choose the best option for them.
+```
+JDK 1.8 minimum
+```
 
-For this tasks below, you will be using three supplier APIs: Dave's Taxis, Eric's Taxis and Jeff's Taxis.
+### Part 1
+The application offers the possibility to isolate the results for every provider. You can either supply arguments in the edit configurations tab of IntelliJ or run the command (make sure you ran mvnw clean install before for this):
+```
+java -jar target/spring-0.0.1-SNAPSHOT.jar {pickup} {dropoff} provider {provider_name} {number_of_passengers}
+```
 
-| Supplier | API URL |
-| - | - |
-| Dave's Taxis | https://techtest.rideways.com/dave |
-| Eric's Taxis | https://techtest.rideways.com/eric |
-| Jeff's Taxis | https://techtest.rideways.com/jeff |
+### Part 2 
 
-Documentation for the APIs can be found [here](api.md)
+## Built With
+* [Maven](https://maven.apache.org/) - Dependency Management
 
-## Part 1
+## Contributing
 
-* Build a console application which calls the API of "Dave's Taxis". Print out the search results to the console in descending price order. Each line of the output should be in the format `{car type} - {price}`
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-    The console app should take pickup and drop off locations as command line parameters. Both are specified as `latitude, longitude`, for example the pickup location for London Heathrow is `51.470020,-0.454295`
+## Versioning
 
-* The API has limited functionality, and returns options that may not be relevant to the customer. Add logic to limit the output by taking into account the maximum number of passengers a car can hold. Add the number of passengers to your method as a parameter. 
-    
-    You can find the maximum number of passengers each car type can hold in the table below.
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-| Car Type | Maximum passengers |
-| - | - |
-| STANDARD | 4 |
-| EXECUTIVE | 4 |
-| LUXURY | 4 |
-| PEOPLE_CARRIER | 6 |
-| LUXURY_PEOPLE_CARRIER | 6 |
-| MINIBUS | 16 |
+## Authors
 
-* The Rides team have more than one supplier in most locations. Extend the functionality of the console application to call the APIs of "Eric's Taxis" and "Jeff's Taxis" as well. For each car type, choose the cheapest supplier to include in your output. There should only be one supplier chosen per car type.
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
-    Each line of the output should be in the format `{car type} - {supplier} - {price}`
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-### Notes
+## License
 
-* Not every supplier has every car type available - you may not get 6 results from every supplier.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-* Supplier APIs can sometimes break, you need to be able to handle this gracefully.
+## Acknowledgments
 
-* Supplier APIs can sometimes be slow. You should give a supplier 2 seconds to respond, if you do not receive a response within that time frame you should ignore the supplier for that search.
-
-## Part 2
-Using the code you created in Part 1, extend the application to provide the output through a REST API using one of the following languages:
-* PHP
-* JavaScript (Node, Angular are also acceptable)
-* Java
-* Scala
-
-Your API should return a json payload.
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
