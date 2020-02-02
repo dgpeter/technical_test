@@ -22,6 +22,7 @@ public class RideService {
 
     private ObjectMapper mapper = new ObjectMapper();
 
+
     public ResponseEntity<String> getResponseFromRequest(String apiProvider, String pickupCoordinates,
                                                                             String dropffCoordinates){
 

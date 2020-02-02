@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestSuiteForService {
 
-    private RideService rideService = new RideService();
     private HTTPRequestClient client = new HTTPRequestClient();
+    private RideService rideService = new RideService();
 
     private final static String PICK_UP_COORDINATES = "3.410632,-2.157533";
     private final static String DROP_OFF_COORDINATES = "3.410632,-2.157533";
@@ -114,7 +114,7 @@ public class TestSuiteForService {
 //                        + ride.getPrice()));
 
         assertTrue(!rides.isEmpty());
-        assertEquals(4, rides.size());
+        assertEquals(2, rides.size());
         assertEquals("LUXURY_PEOPLE_CARRIER", rides.get(0).getCarType());
         assertEquals(317918, rides.get(0).getPrice());
         assertEquals("MINIBUS", rides.get(1).getCarType());
