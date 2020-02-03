@@ -13,6 +13,7 @@ git clone git@github.com:dgpeter/technical_test.git
 ```
 
 ./mvnw clean install - will return a JAR file -- spring-0.0.1-SNAPSHOT.jar and will also run the tests
+You can also run the Application.java class from your IDE and supply it with arguments. 
 
 
 ### Prerequisites
