@@ -61,7 +61,7 @@ Then in your preffered browser enter the urls:
 * (http://localhost:8080/options/?pickup=3.410632,-2.157533&dropoff=3.410632,-2.157533&numberOfPassengers=5)
 * (http://localhost:8080/options/jeff?pickup=3.410632,-2.157533&dropoff=3.410632,-2.157533)
 * (http://localhost:8080/options/dave?pickup=3.410632,-2.157533&dropoff=3.410632,-2.157533)
-* (http://localhost:8080/options/?pickup=3.410632,-2.157533&dropoff=3.410632,-2.157533&numberOfPassengers=5)
+* (http://localhost:8080/options/dave?pickup=3.410632,-2.157533&dropoff=3.410632,-2.157533&numberOfPassengers=5)
 
 If no path variable is provided, a list of rides in JSON format will be provided (the minumum price/car_type rule applies here too)
 All will be printed in descending order. Errors will be thrown, the console will only display if there are problems with the request. (Internal Server Error, Bad Request, Timeout (set for 2 sec)) etc.
